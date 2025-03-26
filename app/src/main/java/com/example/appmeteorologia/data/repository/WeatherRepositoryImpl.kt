@@ -21,8 +21,13 @@ class WeatherRepositoryImpl @Inject constructor(
             conditionIcon = weather.icon,
             condition = weather.main,
             temperature = response.main.temp.roundToInt(),
+            feelsLikeTemperature = response.main.feelsLike.roundToInt(),
+            humidity = response.main.humidity,
+            windSpeed = response.wind.speed,
             dayOfWeek = LocalDate.now().dayOfWeek.getDisplayName(TextStyle.FULL, Locale.getDefault()),
-            isDay = weather.icon.last() == 'd'
+            isDay = weather.icon.last() == 'd',
+            tempMin = response.main.tempMin.roundToInt(),
+            tempMax = response.main.tempMax.roundToInt()
         )
     }
 }

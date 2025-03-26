@@ -17,7 +17,7 @@ class KtorRemoteDataSource @Inject constructor(
 
     override suspend fun getWeatherDataResponse(lat: Double, lng: Double): WeatherDataResponse {
         return httpClient
-            .get("${BASE_URL}/weather?lat=$lat&lon=$lng&appid=5c268c95afba8c63a97bd62f5f6e5ede&units=metric")
+            .get("${BASE_URL}/weather?lat=$lat&lon=$lng&appid=0c2fc6938e4ed0e7bc37764904ec6895&units=metric")
             .body()
     }
 }
