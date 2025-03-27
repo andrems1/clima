@@ -1,5 +1,6 @@
 package com.example.appmeteorologia
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -67,6 +68,7 @@ fun WeatherScreen(viewModel: WeatherViewModel) {
     }
 }
 
+@SuppressLint("DefaultLocale")
 @Composable
 fun WeatherInfoDisplay(weather: WeatherInfo) {
     Column {
@@ -75,6 +77,11 @@ fun WeatherInfoDisplay(weather: WeatherInfo) {
         Text("Temperatura: ${weather.temperature}°C")
         Text("Sensação térmica: ${weather.feelsLikeTemperature}°C")
         Text("Umidade: ${weather.humidity}%")
-        Text("Vento: ${weather.windSpeed} m/s")
+        Text("Velocidade do vento: ${String.format("%.2f", weather.windSpeed * 3.6)} km/h")
+        Text("Temp. Mínima: ${weather.tempMin}°C")
+        Text("Temp. Máxima: ${weather.tempMax}°C")
+        Text("Dia da Semana: ${weather.dayOfWeek}")
+        Text("Momento do dia: ${if (weather.isDay) "Dia" else "Noite"}")
+
     }
 }

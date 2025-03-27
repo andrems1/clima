@@ -60,4 +60,3 @@ fun WeatherScreen(weatherInfo: WeatherInfo) {
         Text("Temp. Máxima: ${weatherInfo.tempMax}°C")
     }
 }
-
