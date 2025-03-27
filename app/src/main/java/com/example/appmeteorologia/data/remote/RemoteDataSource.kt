@@ -5,4 +5,6 @@ import com.example.appmeteorologia.data.remote.response.WeatherDataResponse
 interface RemoteDataSource {
 
     suspend fun getWeatherDataResponse(lat: Double, lng: Double): WeatherDataResponse
+
+    suspend fun getWeatherDataByCityName(cityName: String): WeatherDataResponse
 }
